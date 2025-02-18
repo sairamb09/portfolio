@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,29 +9,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-body.dark-theme {
-    background-color: #ffffff;
-    color: #121212;
-}
-body.light-theme {
-    background-color: #ffffff;
-    color: black;
-}
-
-.navbar, .nav-link, .theme-toggle-button, .section, .skills-section, .project-card, .view-project-button, .close-modal-button {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.light-theme .navbar, body.light-theme .nav-link, body.light-theme .theme-toggle-button, body.light-theme .section, body.light-theme .skills-section, body.light-theme .project-card, body.light-theme .view-project-button, body.light-theme .close-modal-button {
+body.light-theme {
     background-color: #ffffff;
     color: black;
-}
-
-body.dark-theme .navbar, body.dark-theme .nav-link, body.dark-theme .theme-toggle-button, body.dark-theme .section, body.dark-theme .skills-section, body.dark-theme .project-card, body.dark-theme .view-project-button, body.dark-theme .close-modal-button {
-    background-color: #121212;
-    color: white;
 }
 
 .container {
@@ -39,6 +23,7 @@ body.dark-theme .navbar, body.dark-theme .nav-link, body.dark-theme .theme-toggl
     margin: auto;
 }
 
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -59,7 +44,7 @@ body.dark-theme .navbar, body.dark-theme .nav-link, body.dark-theme .theme-toggl
 .navbar-right {
     display: flex;
     gap: 15px;
-    padding-right: 40px; /* Add padding to move the icons left */
+    padding-right: 20px; /* Adjusted padding */
 }
 
 .nav-link {
@@ -73,6 +58,7 @@ body.dark-theme .navbar, body.dark-theme .nav-link, body.dark-theme .theme-toggl
     color: #4caf50;
 }
 
+/* Theme Toggle */
 .theme-toggle-button {
     background: none;
     border: none;
@@ -87,8 +73,8 @@ body.dark-theme .navbar, body.dark-theme .nav-link, body.dark-theme .theme-toggl
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-body.dark-theme .theme-toggle-button {
-    color: #121212;
+body.light-theme .theme-toggle-button {
+    color: black;
 }
 
 .theme-toggle-button:hover {
@@ -96,12 +82,9 @@ body.dark-theme .theme-toggle-button {
     transform: scale(1.1);
 }
 
-body.dark-theme .theme-toggle-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
+/* Sections */
 .section {
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 80px 20px;
     min-height: 100vh;
     display: flex;
@@ -109,6 +92,7 @@ body.dark-theme .theme-toggle-button:hover {
     align-items: center;
 }
 
+/* Footer */
 .footer {
     display: flex;
     justify-content: center;
@@ -116,6 +100,7 @@ body.dark-theme .theme-toggle-button:hover {
     padding: 20px;
 }
 
+/* Skills Section */
 .skills-section {
     display: flex;
     flex-direction: column;
@@ -127,6 +112,7 @@ body.dark-theme .theme-toggle-button:hover {
     margin: 30px 0;
     max-width: 1000px;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .skills-category {
@@ -150,11 +136,12 @@ body.dark-theme .theme-toggle-button:hover {
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .skill-item:hover {
     background-color: rgba(240, 248, 255, 0.9);
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
@@ -188,6 +175,7 @@ body.dark-theme .theme-toggle-button:hover {
     }
 }
 
+/* Modal */
 .modal {
     background: #fff;
     padding: 20px;
@@ -206,15 +194,20 @@ body.dark-theme .theme-toggle-button:hover {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-.view-project-button {
+/* Buttons */
+.view-project-button,
+.close-modal-button {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #4caf50;
-    color: #fff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+
+.view-project-button {
+    background-color: #4caf50;
+    color: #fff;
 }
 
 .view-project-button:hover {
@@ -222,18 +215,42 @@ body.dark-theme .theme-toggle-button:hover {
 }
 
 .close-modal-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
     background-color: #f44336;
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .close-modal-button:hover {
     background-color: #e53935;
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 40px 20px;
+    }
 
+    .skills-category h3 {
+        font-size: 1.2em;
+    }
+
+    .skill-item {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 30px 15px;
+    }
+
+    .skills-category h3 {
+        font-size: 1em;
+    }
+
+    .skill-item {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+}
