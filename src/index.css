@@ -66,3 +66,32 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* Global Media Queries */
+
+/* For small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  button {
+    padding: 0.5em 1em; /* Adjust button size */
+    font-size: 0.9em;   /* Reduce font size */
+  }
+
+  body {
+    min-height: auto; /* Ensure body height adjusts */
+  }
+}
+
+/* For medium screens (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+  }
+}

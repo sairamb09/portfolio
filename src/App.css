@@ -17,12 +17,16 @@ body.light-theme {
     color: black;
 }
 
+
 .container {
     text-align: center;
-    max-width: 800px;
+    max-width: 100%;
     margin: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 /* Navbar */
 .navbar {
     position: fixed;
@@ -34,17 +38,12 @@ body.light-theme {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.navbar-left {
+.navbar-left, .navbar-right {
     display: flex;
     gap: 15px;
-}
-
-.navbar-right {
-    display: flex;
-    gap: 15px;
-    padding-right: 20px; /* Adjusted padding */
 }
 
 .nav-link {
@@ -222,35 +221,44 @@ body.light-theme .theme-toggle-button {
 }
 
 .close-modal-button:hover {
-    background-color: #e53935;
-}
-/* Responsive Design */
+    background-color: #e53935;}
+
+/* Media Queries for Responsive Design */
+
+/* For small screens (max-width: 768px) */
 @media (max-width: 768px) {
-    .skills-section {
-        padding: 40px 20px;
+    body {
+        padding: 10px;
+        font-size: 0.9rem; /* Reduce base font size */
     }
 
-    .skills-category h3 {
-        font-size: 1.2em;
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
     }
 
-    .skill-item {
-        padding: 8px 12px;
-        font-size: 0.9em;
+    .container {
+        padding: 10px;
+    }
+
+    .nav-link {
+        font-size: 16px; /* Reduce font size for links */
+        padding: 5px 0;
     }
 }
 
-@media (max-width: 480px) {
-    .skills-section {
-        padding: 30px 15px;
+/* For medium screens (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 15px 20px;
     }
 
-    .skills-category h3 {
-        font-size: 1em;
+    .container {
+        padding: 15px;
     }
 
-    .skill-item {
-        padding: 6px 10px;
-        font-size: 0.8em;
+    .nav-link {
+        font-size: 18px;
     }
 }
