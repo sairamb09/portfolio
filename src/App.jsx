@@ -16,6 +16,7 @@ import taskManagementImage from "./assets/task-management.png";
 import metroDataWarehouseImage from "./assets/metro-data-warehouse.png";
 import './components/About.css';
 import './components/Contact.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const sections = [
     {
         id: "about",
