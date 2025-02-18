@@ -38,3 +38,26 @@
 .skill-item:hover {
     background-color: rgba(240, 248, 255, 0.9);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .horizontal-skills-section {
+        padding: 15px;
+    }
+
+    .skill-item {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .horizontal-skills-section {
+        padding: 10px;
+    }
+
+    .skill-item {
+        padding: 6px;
+        font-size: 0.8em;
+    }
+}

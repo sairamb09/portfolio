@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "./About.css";
-import profileImage from "../assets/profile.png"; // Import the image
+import profileImage from "../assets/profile.png";
 
 const About = () => {
+    useEffect(() => {
+        const aboutSection = document.querySelector('.about-section');
+
+        const handleMouseMove = (e) => {
+            const { offsetX, offsetY } = e;
+            const { clientWidth, clientHeight } = aboutSection;
+            const moveX = (offsetX / clientWidth) * 30;
+            const moveY = (offsetY / clientHeight) * 30;
+            aboutSection.style.backgroundPosition = `${moveX}% ${moveY}%`;
+        };
+
+        aboutSection.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            aboutSection.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
     return (
         <motion.section
             id="about"
@@ -11,26 +29,40 @@ const About = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            whileHover={{ y: [0, -5, 0], transition: { duration: 1, repeat: Infinity, repeatType: "reverse" } }}
         >
             <motion.div
                 className="badges"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                whileHover={{ y: [0, -5, 0], transition: { duration: 1, repeat: Infinity, repeatType: "reverse" } }}
             >
                 <motion.span
                     className="badge"
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                        duration: 0.5,
+                        delay: 0.3
+                    }}
                 >
                     Software Developer
                 </motion.span>
                 <motion.span
                     className="badge"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                        duration: 0.5,
+                        delay: 0.4
+                    }}
                 >
                     Looking for new opportunities!
                 </motion.span>
