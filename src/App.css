@@ -26,6 +26,7 @@ body.light-theme {
     flex-direction: column;
     align-items: center;
 }
+
 /* Navbar */
 .navbar {
     position: fixed;
@@ -220,7 +221,8 @@ body.light-theme .theme-toggle-button {
 }
 
 .close-modal-button:hover {
-    background-color: #e53935;}
+    background-color: #e53935;
+}
 
 /* Media Queries for Responsive Design */
 
