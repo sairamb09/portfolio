@@ -197,3 +197,33 @@ body {
 .project-content {
     padding: clamp(1rem, 2vw, 1.5rem);
 }
+/* Education and Experience Timeline Overrides */
+#education .vertical-timeline-element-content,
+#experience .vertical-timeline-element-content {
+    background: rgb(33, 150, 243) !important;
+    color: #ffffff !important;
+}
+
+#education .vertical-timeline-element-date,
+#experience .vertical-timeline-element-date {
+    color: #ffffff !important;
+}
+
+#education .vertical-timeline-element-content p,
+#experience .vertical-timeline-element-content p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#education .vertical-timeline-element-content h3,
+#experience .vertical-timeline-element-content h3,
+#education .vertical-timeline-element-content h4,
+#experience .vertical-timeline-element-content h4 {
+    color: #ffffff !important;
+}
+
+/* Keep original icon colors */
+#education .vertical-timeline-element-icon,
+#experience .vertical-timeline-element-icon {
+    background: rgb(255, 165, 0) !important;
+    color: #fff !important;
+}
