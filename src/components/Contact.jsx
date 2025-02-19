@@ -38,7 +38,8 @@ const Contact = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
             >
                 <p className="typing-animation">
-                    Feel free to reach out to discuss technology, career opportunities, or potential collaborations.<br />
+                    Feel free to reach out to discuss technology, career opportunities, or potential collaborations.
+                    <br />
                     Send me a message here.
                 </p>
             </motion.div>
@@ -58,6 +59,7 @@ const Contact = () => {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
+                        placeholder="Enter your first name"
                     />
                 </div>
                 <div className="form-group">
@@ -69,6 +71,7 @@ const Contact = () => {
                         value={formData.lastName}
                         onChange={handleChange}
                         required
+                        placeholder="Enter your last name"
                     />
                 </div>
                 <div className="form-group">
@@ -80,19 +83,21 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        placeholder="Enter your email address"
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="message">Send a Message:</label>
+                    <label htmlFor="message">Message:</label>
                     <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        placeholder="Write your message here..."
                     ></textarea>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" className="submit-button">Submit</button>
             </motion.form>
 
             {isSubmitted && (

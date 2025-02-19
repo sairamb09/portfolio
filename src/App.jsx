@@ -16,7 +16,6 @@ import taskManagementImage from "./assets/task-management.png";
 import metroDataWarehouseImage from "./assets/metro-data-warehouse.png";
 import './components/About.css';
 import './components/Contact.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 const sections = [
     {
         id: "about",
@@ -319,19 +318,13 @@ const App = () => {
 
     const toggleTheme = () => {
         setIsDarkTheme(!isDarkTheme);
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.toggle('dark-theme', !isDarkTheme);
-            section.classList.toggle('light-theme', isDarkTheme);
-        });
+        document.body.classList.toggle('light-theme', !isDarkTheme);
+        document.body.classList.toggle('dark-theme', isDarkTheme);
     };
 
     useEffect(() => {
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.toggle('dark-theme', isDarkTheme);
-            section.classList.toggle('light-theme', !isDarkTheme);
-        });
+        document.body.classList.toggle('light-theme', !isDarkTheme);
+        document.body.classList.toggle('dark-theme', isDarkTheme);
     }, [isDarkTheme]);
 
     return (
@@ -347,7 +340,7 @@ const App = () => {
                 </div>
                 <div className="navbar-right">
                     <button className="theme-toggle-button" onClick={toggleTheme}>
-                        <FaMoon size={20} />
+                        {isDarkTheme ? <FaSun size={20} /> : <FaMoon size={20} />}
                     </button>
                     <a href="https://linkedin.com/in/sairambandarupalli" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin size={30} />
@@ -374,7 +367,5 @@ const App = () => {
         </div>
     );
 };
-
-
 
 export default App;

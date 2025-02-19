@@ -1,80 +1,135 @@
-.projects-container {
-    display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    justify-content: space-between;
-    gap: 30px; /* Adjust the spacing between the projects */
-    padding: 20px; /* Add padding around the container */
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black; /* Keeps the black background */
+    color: white; /* Maintains readable text color */
 }
 
+/* Project Card */
 .project-card {
-    flex: 0 0 calc(25% - 30px); /* Fixed width to fit four cards in a row */
-    margin: 10px; /* Add margin around each card */
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #1a1a1a, #2b2b2b); /* Darker gradient */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 700px; /* Slightly smaller max width */
+    width: 90%; /* Responsive width for all devices */
+    color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: auto; /* Allow height to adjust based on content */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.project-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-}
-
-.project-text {
-    flex: 1;
-    text-align: left; /* Align text to the left */
-    padding: 10px; /* Add padding to ensure text stays within margins */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Add ellipsis for overflow text */
-    white-space: normal; /* Allow text wrapping */
-    color: white; /* Ensure text color is readable */
-    width: 100%; /* Ensure text takes full width of the container */
-    margin-top: 10px; /* Add margin to separate text from image */
-}
-
-.project-image img {
-    width: 100%; /* Ensure images take full width of the container */
-    height: auto; /* Maintain the aspect ratio */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for animation */
+    overflow: hidden;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-.project-image img:hover {
-    transform: scale(1.15); /* Scale up more on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
 }
 
-.expense-tracker-image img {
-    max-width: 250px; /* Increased size */
+/* Project Title */
+.project-title {
+    font-size: clamp(1.2rem, 2vw, 1.8rem); /* Smaller font size */
+    text-align: center;
+    margin-bottom: 10px;
+    color: #4caf50; /* Highlighted green color */
 }
 
-.customer-support-image img {
-    max-width: 220px; /* Original size */
+/* Project Image Wrapper */
+.project-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the image stays within bounds */
+    max-height: 200px; /* Reduced image height */
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Restrict image height */
+    object-fit: cover; /* Keeps image proportional */
+    border-radius: 8px;
+}
+
+/* Project Text */
+.project-text {
+    font-size: clamp(0.8rem, 1vw, 0.9rem); /* Smaller text size */
+    line-height: 1.4; /* Slightly tighter line spacing */
+}
+
+.project-text ul {
+    margin: 8px 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.project-text li {
+    margin-bottom: 5px;
+}
+
+/* Project Link */
+.project-link {
+    color: #4caf50; /* Highlighted link color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 0.9rem; /* Smaller link text */
+}
+
+.project-link:hover {
+    color: #45a049; /* Slightly darker green on hover */
 }
 
 /* Responsive Design */
+
+/* Tablet screens */
 @media (max-width: 768px) {
-    .projects-container {
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        justify-content: center;
+    .project-card {
+        padding: 10px;
+        max-width: 90%;
     }
 
+    .project-title {
+        font-size: 1.4rem;
+    }
+
+    .project-image-wrapper {
+        max-height: 180px; /* Smaller height for tablets */
+    }
+
+    .project-image {
+        max-height: 180px;
+    }
+
+    .project-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
     .project-card {
-        flex: 0 0 100%; /* Full width on smaller screens */
-        margin-bottom: 20px;
+        padding: 8px;
+        max-width: 95%;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-image-wrapper {
+        max-height: 150px; /* Smaller height for mobile */
+    }
+
+    .project-image {
+        max-height: 150px;
+    }
+
+    .project-text {
+        font-size: 0.75rem; /* Smaller text for mobile */
+    }
+
+    .project-link {
+        font-size: 0.8rem; /* Smaller links */
     }
 }

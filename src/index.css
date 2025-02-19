@@ -25,20 +25,25 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding: 1em;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2rem; /* Default for smaller screens */
   line-height: 1.1;
+  text-align: center; /* Center headings */
+  margin: 0.5em 0;
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.5em 1em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -66,32 +71,45 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-/* Global Media Queries */
 
-/* For small screens (max-width: 768px) */
-@media (max-width: 768px) {
+/* Responsive Design */
+
+/* For small screens (max-width: 480px) */
+@media (max-width: 480px) {
   h1 {
-    font-size: 2rem; /* Reduce heading size */
+    font-size: 1.8rem; /* Slightly smaller heading */
   }
 
   button {
-    padding: 0.5em 1em; /* Adjust button size */
-    font-size: 0.9em;   /* Reduce font size */
+    padding: 0.5em 0.8em; /* Reduce padding */
+    font-size: 0.9em; /* Reduce font size */
   }
 
   body {
-    min-height: auto; /* Ensure body height adjusts */
+    padding: 0.5em; /* Adjust padding for small screens */
   }
 }
 
-/* For medium screens (768px to 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* For medium screens (481px to 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Adjust heading size */
   }
 
   button {
     padding: 0.6em 1.2em;
     font-size: 1em;
+  }
+}
+
+/* For large screens (1025px and up) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 3.2rem; /* Larger heading size for desktops */
+  }
+
+  body {
+    max-width: 1200px; /* Limit width for large screens */
+    margin: 0 auto; /* Center content */
   }
 }

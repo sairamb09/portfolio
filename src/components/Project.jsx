@@ -12,13 +12,13 @@ const Project = ({ title, description, skills, features, link, image, imageClass
             whileHover={{ scale: 1.05 }}
         >
             <div className="project-content">
-                <h3>{title}</h3>
+                <h3 className="project-title">{title}</h3>
                 <motion.div
-                    className={`project-image ${imageClass}`}
-                    whileHover={{ scale: 1.1 }} /* Scale up on hover */
+                    className={`project-image-wrapper ${imageClass}`}
+                    whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <img src={image} alt={title} />
+                    <img src={image} alt={title} className="project-image" />
                 </motion.div>
                 <div className="project-text">
                     <p><strong>Description:</strong></p>
@@ -36,7 +36,11 @@ const Project = ({ title, description, skills, features, link, image, imageClass
                         ))}
                     </ul>
                     {link && (
-                        <p><a href={link} target="_blank" rel="noopener noreferrer">View Project</a></p>
+                        <p>
+                            <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
+                                View Project
+                            </a>
+                        </p>
                     )}
                 </div>
             </div>

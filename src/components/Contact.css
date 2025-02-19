@@ -1,35 +1,41 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black; /* Ensures black background throughout */
+    color: white; /* Text color adjusted for readability on black background */
+}
+
+/* Contact Section Styles */
 .contact-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 40px 30px;
-    background: linear-gradient(135deg, #1e1e1e, #2c3e50);
-    border-radius: 10px;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1e1e1e, #2c3e50); /* Black-gradient background */
+    border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    max-width: 1000px;
-    margin: 20px auto;
+    max-width: 90%;
+    margin: 2rem auto;
     color: white;
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .contact-message {
-    font-size: 18px;
-    color: white;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
     text-align: center;
-    margin-bottom: 20px;
-    height: 80px;
+    color: white; /* Ensures text is white on black */
 }
 
 .typing-animation {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid;
+    border-right: 3px solid white; /* White caret for animation */
     animation: typing 10s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
     max-width: 100%;
-    box-sizing: border-box;
 }
 
 @keyframes typing {
@@ -44,36 +50,34 @@
 
 .contact-form {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    gap: 15px;
+    gap: 1rem;
     width: 100%;
     max-width: 600px;
 }
 
 .form-group {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .form-group label {
-    margin-right: 10px;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
     font-weight: bold;
     color: white;
-    flex: 1;
 }
 
 .form-group input,
 .form-group textarea {
-    padding: 15px;
+    padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
     width: 100%;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparency on inputs */
     color: white;
-    flex: 2;
 }
 
 .form-group input:focus,
@@ -83,17 +87,15 @@
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
-button {
-    padding: 10px 20px;
+button.submit-button {
+    padding: 0.75rem 1.5rem;
     background: #4caf50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
     transition: background 0.3s ease;
-    position: sticky;
-    bottom: 20px;
     align-self: center;
 }
 
@@ -103,67 +105,51 @@ button:hover {
 
 .submitted-data {
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     width: 100%;
-    box-sizing: border-box;
     color: white;
 }
 
 .submitted-data h3 {
-    margin-top: 0;
     color: #4caf50;
 }
 
 .submitted-data p {
-    margin: 5px 0;
+    margin: 0.5rem 0;
     color: white;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-section {
-        padding: 30px 20px;
+        padding: 1.5rem;
     }
 
-    .contact-message {
-        font-size: 16px;
-    }
-
-    .form-group label {
-        font-size: 14px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        font-size: 14px;
+    .form-group {
+        gap: 0.5rem;
     }
 
     button {
-        font-size: 14px;
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .contact-section {
-        padding: 20px 15px;
+        padding: 1rem;
     }
 
     .contact-message {
-        font-size: 14px;
+        font-size: 1rem;
     }
 
     .form-group label {
-        font-size: 12px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        font-size: 12px;
+        font-size: 0.875rem;
     }
 
     button {
-        font-size: 12px;
+        font-size: 0.875rem;
     }
 }

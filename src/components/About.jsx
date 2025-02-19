@@ -10,12 +10,15 @@ const About = () => {
         const handleMouseMove = (e) => {
             const { offsetX, offsetY } = e;
             const { clientWidth, clientHeight } = aboutSection;
-            const moveX = (offsetX / clientWidth) * 30;
-            const moveY = (offsetY / clientHeight) * 30;
+            const moveX = (offsetX / clientWidth) * 20; // Reduced effect for better experience
+            const moveY = (offsetY / clientHeight) * 20;
             aboutSection.style.backgroundPosition = `${moveX}% ${moveY}%`;
         };
 
-        aboutSection.addEventListener('mousemove', handleMouseMove);
+        if (window.innerWidth > 768) {
+            // Enable the effect only for larger screens
+            aboutSection.addEventListener('mousemove', handleMouseMove);
+        }
 
         return () => {
             aboutSection.removeEventListener('mousemove', handleMouseMove);
@@ -29,14 +32,12 @@ const About = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            whileHover={{ y: [0, -5, 0], transition: { duration: 1, repeat: Infinity, repeatType: "reverse" } }}
         >
             <motion.div
                 className="badges"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                whileHover={{ y: [0, -5, 0], transition: { duration: 1, repeat: Infinity, repeatType: "reverse" } }}
             >
                 <motion.span
                     className="badge"
@@ -82,7 +83,7 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
             >
-                A Software Developer with 4+ years of experience in building scalable applications, specializing in developing RESTful APIs, microservices, cloud-native solutions in Agile environments and modern UI frameworks like React, by maintaining a 95% on-time delivery rate.
+                A Software Developer with 4+ years of experience in building scalable applications, specializing in developing RESTful APIs, microservices, and cloud-native solutions in Agile environments, maintaining a 95% on-time delivery rate.
             </motion.p>
             <motion.p
                 className="description"
@@ -90,7 +91,7 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
             >
-                Demonstrated in deploying applications on AWS, leveraging Docker for containerization, and collaborating with cross-functional teams to deliver high-impact software solutions, ensuring seamless integration between front end and back end while sticking to industry best practices.
+                Demonstrated expertise in deploying applications on AWS, leveraging Docker for containerization, and collaborating with cross-functional teams to deliver high-impact software solutions. Ensuring seamless integration between front-end and back-end while adhering to industry best practices.
             </motion.p>
         </motion.section>
     );
