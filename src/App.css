@@ -7,15 +7,16 @@
     --card-bg: #2d2d2d;
     --transition: all 0.3s ease;
     --section-padding: clamp(2rem, 5vw, 4rem) 0;
+    --skill-gradient: linear-gradient(135deg, #1e1e1e, #2c3e50);
 }
 
 .light-theme {
     --background-color: #f5f6fa;
     --text-color: #2d3436;
     --card-bg: #ffffff;
+    --skill-gradient: linear-gradient(135deg, #f8f9fa, #e9ecef);
 }
 
-/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +42,6 @@ body {
     margin: 0 auto;
 }
 
-/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -72,10 +72,6 @@ body {
     padding: 0.5rem 0;
 }
 
-.nav-link:hover {
-    color: var(--primary-color);
-}
-
 .navbar-right {
     display: flex;
     align-items: center;
@@ -92,7 +88,6 @@ body {
     min-height: 44px;
 }
 
-/* Section Styles */
 .section {
     padding: var(--section-padding);
     min-height: 100vh;
@@ -101,14 +96,6 @@ body {
     justify-content: center;
 }
 
-.section h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    margin-bottom: clamp(1rem, 3vw, 2rem);
-    color: var(--primary-color);
-    text-align: center;
-}
-
-/* Projects Section */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
@@ -116,13 +103,12 @@ body {
     padding: 1rem;
 }
 
-/* Skills Section */
 .skills-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
     gap: clamp(1rem, 3vw, 2rem);
     padding: clamp(2rem, 5vw, 3rem);
-    background: linear-gradient(135deg, #1e1e1e, #2c3e50);
+    background: var(--skill-gradient);
     border-radius: 15px;
     margin: clamp(1rem, 3vw, 2rem) 0;
     width: 100%;
@@ -133,12 +119,6 @@ body {
     padding: clamp(1rem, 2vw, 1.5rem);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.skills-category h3 {
-    color: var(--secondary-color);
-    margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
 }
 
 .skills-list {
@@ -156,23 +136,37 @@ body {
     border-radius: 20px;
     font-size: clamp(0.8rem, 1vw, 0.9rem);
     transition: var(--transition);
+    color: var(--text-color);
+}
+
+.light-theme .skill-item {
+    background: rgba(0,0,0,0.05);
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         gap: 1rem;
     }
-}
 
-@media (max-width: 768px) {
     .section {
         min-height: auto;
     }
 
     .vertical-timeline-element-content {
         padding: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .vertical-timeline-element-date {
+        font-size: 14px !important;
     }
 
     .project-image {
@@ -181,18 +175,15 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .skills-section {
-        grid-template-columns: 1fr;
-    }
+/* Timeline Overrides */
+.vertical-timeline-element-content {
+    background: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1) !important;
+}
 
-    .nav-link {
-        font-size: 0.9rem;
-    }
-
-    .theme-toggle-button {
-        padding: 0.3rem;
-    }
+.vertical-timeline-element-date {
+    color: var(--text-color) !important;
 }
 
 /* Project Component */
@@ -203,20 +194,6 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.project-image {
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-    object-fit: cover;
-}
-
 .project-content {
     padding: clamp(1rem, 2vw, 1.5rem);
-}
-
-/* Contact Form */
-.contact-form {
-    width: min(600px, 90%);
-    margin: 0 auto;
-    padding: clamp(1rem, 3vw, 2rem);
 }
