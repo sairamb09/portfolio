@@ -1,0 +1,58 @@
+/* Responsive Design */
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+    /* Stack navbar items vertically */
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Allow sections to shrink in height */
+    .section {
+        min-height: auto;
+        padding: clamp(1.5rem, 4vw, 3rem) 0;
+    }
+
+    /* Adjust timeline content padding for better spacing */
+    .vertical-timeline-element-content {
+        padding: clamp(0.8rem, 2vw, 1.2rem) !important;
+    }
+}
+
+/* Mobile and very small screens */
+@media (max-width: 480px) {
+    /* Improve skills section layout */
+    .skills-section {
+        grid-template-columns: 1fr;
+        padding: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    /* Adjust heading sizes in skills section */
+    .skills-category h3 {
+        font-size: clamp(1rem, 3.5vw, 1.5rem);
+    }
+
+    /* Optimize skill item spacing */
+    .skill-item {
+        padding: clamp(0.8rem, 2vw, 1rem);
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+    }
+
+    /* Reduce padding for timeline content to avoid overflow */
+    .vertical-timeline-element-content {
+        padding: clamp(0.5rem, 2vw, 0.8rem) !important;
+    }
+
+    /* Adjust timeline date font size for readability */
+    .vertical-timeline-element-date {
+        font-size: clamp(12px, 2.5vw, 14px) !important;
+    }
+
+    /* Maintain aspect ratio for project images */
+    .project-image {
+        height: auto;
+        aspect-ratio: 16/9;
+        max-width: 100%;
+    }
+}

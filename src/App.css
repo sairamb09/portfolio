@@ -1,21 +1,24 @@
 :root {
-    --primary-color: #2ecc71;
-    --secondary-color: #3498db;
-    --background-color: #1a1a1a;
-    --text-color: #ffffff;
-    --card-bg: #2d2d2d;
-    --transition: all 0.3s ease;
-    --section-padding: clamp(2rem, 5vw, 4rem) 0;
-    --skill-gradient: linear-gradient(135deg, #1e1e1e, #2c3e50);
+    /* Define global color variables for themes */
+    --primary-color: #2ecc71; /* Green for highlights */
+    --secondary-color: #3498db; /* Blue for secondary elements */
+    --background-color: #1a1a1a; /* Dark background for dark mode */
+    --text-color: #ffffff; /* White text for dark theme */
+    --card-bg: #2d2d2d; /* Card background in dark mode */
+    --transition: all 0.3s ease; /* Smooth transitions */
+    --section-padding: clamp(2rem, 5vw, 4rem) 0; /* Responsive section padding */
+    --skill-gradient: linear-gradient(135deg, #1e1e1e, #2c3e50); /* Gradient for skill section */
 }
 
 .light-theme {
-    --background-color: #f5f6fa;
-    --text-color: #2d3436;
-    --card-bg: #ffffff;
-    --skill-gradient: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    /* Override colors for light mode */
+    --background-color: #f5f6fa; /* Light background */
+    --text-color: #2d3436; /* Dark text for better contrast */
+    --card-bg: #ffffff; /* White background for cards */
+    --skill-gradient: linear-gradient(135deg, #f8f9fa, #e9ecef); /* Light gradient for skills */
 }
 
+/* Reset default margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -23,8 +26,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    font-size: clamp(14px, 1.5vw, 16px);
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    font-size: clamp(14px, 1.5vw, 16px); /* Responsive font size */
 }
 
 body {
@@ -32,41 +35,44 @@ body {
     color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    transition: var(--transition);
-    overflow-x: hidden;
+    transition: var(--transition); /* Smooth theme transitions */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
-    -webkit-user-select: none; /* Prevents text selection on touch devices */
-    user-select: none; /* Prevents text selection on touch devices */
-    touch-action: manipulation; /* Prevents zooming */
-}
-.container {
-    width: min(1200px, 90%);
-    margin: 0 auto;
+    -webkit-user-select: none; /* Disable text selection on mobile */
+    user-select: none; /* Disable text selection */
+    touch-action: manipulation; /* Prevent zooming */
 }
 
+.container {
+    width: min(1200px, 90%); /* Keep container within 1200px max width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem clamp(1rem, 3vw, 2rem);
-    position: sticky;
+    position: sticky; /* Stick to the top */
     top: 0;
     background-color: var(--background-color);
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* Ensure navbar stays above content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for navbar */
 }
 
 .navbar-left {
     display: flex;
     gap: clamp(1rem, 3vw, 2rem);
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
+/* Navigation Links */
 .nav-link {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
-    transition: var(--transition);
+    transition: var(--transition); /* Smooth color changes */
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -74,30 +80,34 @@ body {
     padding: 0.5rem 0;
 }
 
+/* Navbar Right Side */
 .navbar-right {
     display: flex;
     align-items: center;
     gap: clamp(1rem, 2vw, 1.5rem);
 }
 
+/* Theme Toggle Button */
 .theme-toggle-button {
     background: none;
     border: none;
     color: var(--text-color);
     cursor: pointer;
     padding: 0.5rem;
-    min-width: 44px;
+    min-width: 44px; /* Ensures accessibility */
     min-height: 44px;
 }
 
+/* Section Styling */
 .section {
     padding: var(--section-padding);
-    min-height: 100vh;
+    min-height: 100vh; /* Make sections full height */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+/* Projects Section */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
@@ -105,6 +115,7 @@ body {
     padding: 1rem;
 }
 
+/* Skills Section */
 .skills-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
@@ -116,6 +127,7 @@ body {
     width: 100%;
 }
 
+/* Skill Category Card */
 .skills-category {
     background: var(--card-bg);
     padding: clamp(1rem, 2vw, 1.5rem);
@@ -123,12 +135,14 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* Skills List */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: clamp(0.5rem, 1vw, 0.8rem);
 }
 
+/* Skill Item */
 .skill-item {
     display: flex;
     align-items: center;
@@ -141,6 +155,7 @@ body {
     color: var(--text-color);
 }
 
+/* Light Theme Overrides for Skill Item */
 .light-theme .skill-item {
     background: rgba(0,0,0,0.05);
 }
@@ -148,34 +163,48 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: column; /* Stack navbar items */
         gap: 1rem;
     }
 
     .section {
-        min-height: auto;
+        min-height: auto; /* Allow sections to shrink */
     }
 
     .vertical-timeline-element-content {
-        padding: 1rem !important;
+        padding: 1rem !important; /* Adjust padding */
     }
 }
 
 @media (max-width: 480px) {
     .skills-section {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column layout */
         padding: 1.5rem;
     }
 
-    .vertical-timeline-element-date {
-        font-size: 14px !important;
+    .skills-category h3 {
+        font-size: clamp(1rem, 3vw, 1.5rem); /* Adjust heading size */
     }
+
+    .skill-item {
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .vertical-timeline-element-content {
+        padding: 0.5rem !important; /* Adjust padding */
+    }
+    .vertical-timeline-element-date {
+        font-size: 14px !important; /* Adjust date font size */
+    }
+
 
     .project-image {
         height: auto;
-        aspect-ratio: 16/9;
+        aspect-ratio: 16/9; /* Maintain aspect ratio */
     }
 }
+
+/* Section Headings */
 .section h2 {
     text-align: center;
     margin: 0 auto;

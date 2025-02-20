@@ -16,6 +16,8 @@ import taskManagementImage from "./assets/task-management.png";
 import metroDataWarehouseImage from "./assets/metro-data-warehouse.png";
 import './components/About.css';
 import './components/Contact.css';
+import './components/Project.css';
+import "./globalStyles.css"; // Import the new global CSS file
 const sections = [
     {
         id: "about",
