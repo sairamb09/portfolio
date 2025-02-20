@@ -2,137 +2,140 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: black; /* Keeps the black background */
-    color: white; /* Maintains readable text color */
-    touch-action: manipulation; /* Prevents zooming */
-    -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
-    -webkit-user-select: none; /* Prevents text selection on touch devices */
-    user-select: none; /* Prevents text selection on touch devices */
+    background: black;
+    color: white;
+    touch-action: pan-y; /* Only allow vertical scrolling */
+    -webkit-touch-callout: none; /* Disable iOS callouts */
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling */
+    text-size-adjust: 100%; /* Prevent font scaling */
+    line-height: 1.5;
+    overflow-x: hidden;
 }
+
+/* Disable all zooming gestures */
+html {
+    touch-action: manipulation;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
 /* Project Card */
 .project-card {
-    background: linear-gradient(135deg, #1a1a1a, #2b2b2b); /* Darker gradient */
-    border-radius: 10px;
+    background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+    border-radius: clamp(8px, 1.5vw, 12px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    padding: 15px;
-    margin: 20px auto;
-    max-width: 700px; /* Slightly smaller max width */
-    width: 90%; /* Responsive width for all devices */
+    padding: clamp(12px, 2vw, 20px);
+    margin: clamp(15px, 3vh, 25px) auto;
+    width: min(90%, 700px);
     color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    transform: translateZ(0); /* Prevent layout shifts */
 }
 
-.project-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-}
-
-/* Project Title */
+/* Rest of your existing styles remain the same */
 .project-title {
-    font-size: clamp(1.2rem, 2vw, 1.8rem); /* Smaller font size */
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
     text-align: center;
-    margin-bottom: 10px;
-    color: #4caf50; /* Highlighted green color */
+    margin-bottom: clamp(8px, 1.5vw, 12px);
+    color: #4caf50;
+    line-height: 1.3;
 }
 
-/* Project Image Wrapper */
 .project-image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    overflow: hidden; /* Ensures the image stays within bounds */
-    max-height: 200px; /* Reduced image height */
+    margin-bottom: clamp(8px, 1.5vw, 12px);
+    border-radius: clamp(6px, 1vw, 8px);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    max-height: 50vh;
 }
 
 .project-image {
     width: 100%;
-    height: auto;
-    max-height: 200px; /* Restrict image height */
-    object-fit: cover; /* Keeps image proportional */
-    border-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-/* Project Text */
 .project-text {
-    font-size: clamp(0.8rem, 1vw, 0.9rem); /* Smaller text size */
-    line-height: 1.4; /* Slightly tighter line spacing */
+    font-size: clamp(0.75rem, 3vw, 0.95rem);
+    line-height: 1.6;
 }
 
 .project-text ul {
-    margin: 8px 0;
-    padding-left: 20px;
-    list-style: disc;
+    margin: clamp(6px, 1.5vw, 10px) 0;
+    padding-left: clamp(15px, 3vw, 25px);
 }
 
 .project-text li {
-    margin-bottom: 5px;
+    margin-bottom: clamp(4px, 1vw, 8px);
 }
 
-/* Project Link */
 .project-link {
-    color: #4caf50; /* Highlighted link color */
+    color: #4caf50;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    font-size: 0.9rem; /* Smaller link text */
+    font-size: clamp(0.75rem, 3.5vw, 0.95rem);
+    display: inline-block;
+    padding: clamp(4px, 0.8vw, 8px) 0;
 }
 
-.project-link:hover {
-    color: #45a049; /* Slightly darker green on hover */
-}
-
-/* Responsive Design */
-
-/* Tablet screens */
-@media (max-width: 768px) {
+/* Media Queries */
+@media (max-width: 600px) {
     .project-card {
-        padding: 10px;
-        max-width: 90%;
-    }
-
-    .project-title {
-        font-size: 1.4rem;
+        width: min(95%, 400px);
     }
 
     .project-image-wrapper {
-        max-height: 180px; /* Smaller height for tablets */
-    }
-
-    .project-image {
-        max-height: 180px;
-    }
-
-    .project-text {
-        font-size: 0.85rem;
+        max-height: 40vh;
     }
 }
 
-/* Mobile screens */
-@media (max-width: 480px) {
-    .project-card {
-        padding: 8px;
-        max-width: 95%;
-    }
-
+@media (max-width: 340px) {
     .project-title {
-        font-size: 1.2rem;
-    }
-
-    .project-image-wrapper {
-        max-height: 150px; /* Smaller height for mobile */
-    }
-
-    .project-image {
-        max-height: 150px;
+        font-size: 1rem;
     }
 
     .project-text {
-        font-size: 0.75rem; /* Smaller text for mobile */
+        font-size: 0.7rem;
     }
 
     .project-link {
-        font-size: 0.8rem; /* Smaller links */
+        font-size: 0.75rem;
     }
+}
+
+/* Orientation Lock */
+@media (orientation: portrait) {
+    .project-card {
+        margin: clamp(10px, 2vh, 20px) auto;
+    }
+}
+
+/* Desktop Hover States */
+@media (hover: hover) and (pointer: fine) {
+    .project-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .project-link:hover {
+        color: #45a049;
+    }
+}
+
+/* Disable Anchor Scroll Zoom */
+html {
+    scroll-behavior: smooth;
+    overflow-anchor: none;
+}
+
+body {
+    overscroll-behavior-y: contain;
 }
