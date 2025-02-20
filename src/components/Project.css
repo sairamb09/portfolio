@@ -38,7 +38,7 @@ html {
 
 /* Rest of your existing styles remain the same */
 .project-title {
-    font-size: clamp(1.1rem, 4vw, 1.8rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     text-align: center;
     margin-bottom: clamp(8px, 1.5vw, 12px);
     color: #4caf50;
@@ -100,7 +100,7 @@ html {
 
 @media (max-width: 340px) {
     .project-title {
-        font-size: 1rem;
+        font-size: 0.3rem;
     }
 
     .project-text {

@@ -115,46 +115,6 @@ body {
     padding: 1rem;
 }
 
-/* Skills Section */
-.skills-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-    gap: clamp(1rem, 3vw, 2rem);
-    padding: clamp(2rem, 5vw, 3rem);
-    background: var(--skill-gradient);
-    border-radius: 15px;
-    margin: clamp(1rem, 3vw, 2rem) 0;
-    width: 100%;
-}
-
-/* Skill Category Card */
-.skills-category {
-    background: var(--card-bg);
-    padding: clamp(1rem, 2vw, 1.5rem);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* Skills List */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(0.5rem, 1vw, 0.8rem);
-}
-
-/* Skill Item */
-.skill-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: clamp(0.5rem, 1vw, 1rem);
-    background: rgba(255,255,255,0.1);
-    border-radius: 20px;
-    font-size: clamp(0.8rem, 1vw, 0.9rem);
-    transition: var(--transition);
-    color: var(--text-color);
-}
-
 /* Light Theme Overrides for Skill Item */
 .light-theme .skill-item {
     background: rgba(0,0,0,0.05);
@@ -208,4 +168,170 @@ body {
 .section h2 {
     text-align: center;
     margin: 0 auto;
+}
+
+/* Skills Section */
+.skills-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(2rem, 5vw, 3rem);
+    background: var(--skill-gradient);
+    border-radius: 15px;
+    margin: clamp(1rem, 3vw, 2rem) 0;
+    width: 100%;
+}
+
+/* Skill Category Card */
+.skills-category {
+    background: var(--card-bg);
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Skills List */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+/* Skill Item */
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: clamp(0.5rem, 1vw, 1rem);
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
+    transition: var(--transition);
+    color: var(--text-color);
+}
+
+/* App.css - Updated Responsive Styles */
+:root {
+    --skill-card-size: clamp(100px, 15vw, 140px);
+}
+
+/* Skills Section */
+.skills-section {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.skills-category {
+    padding: 1rem;
+}
+
+.skills-category h3 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--skill-card-size), 1fr));
+    gap: 1rem;
+    justify-content: center;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    min-height: var(--skill-card-size);
+    transition: var(--transition);
+}
+
+.skill-icon {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .skills-section {
+        grid-template-columns: 1fr;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .skills-category {
+        scroll-snap-align: start;
+        min-width: 90vw;
+        margin: 0 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .skill-card {
+        min-height: 100px;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --skill-card-size: 90px;
+    }
+
+    .skill-card {
+        font-size: 0.85rem;
+    }
+
+    .skill-icon {
+        font-size: 1.25rem;
+    }
+
+    .skills-grid {
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(100px, 1fr);
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+}
+
+/* Perfect Alignment Additions */
+.container {
+    width: min(1280px, 95%);
+    padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.section {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.navbar {
+    padding: 1rem clamp(1rem, 3vw, 2rem);
+}
+
+.nav-link {
+    font-size: clamp(0.9rem, 1.25vw, 1rem);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
 }
