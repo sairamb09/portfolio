@@ -177,3 +177,12 @@ body {
     text-align: center;
     margin: 0 auto;
 }
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    transition: var(--transition);
+    overflow-x: hidden;
+    touch-action: manipulation; /* Add this line */
+}
