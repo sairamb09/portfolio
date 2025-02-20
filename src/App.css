@@ -202,16 +202,19 @@ body {
 #experience .vertical-timeline-element-content {
     background: rgb(33, 150, 243) !important;
     color: #ffffff !important;
+    padding: clamp(1rem, 2vw, 1.5rem) !important;
 }
 
 #education .vertical-timeline-element-date,
 #experience .vertical-timeline-element-date {
     color: #ffffff !important;
+    font-size: clamp(0.8rem, 1.5vw, 1rem) !important;
 }
 
 #education .vertical-timeline-element-content p,
 #experience .vertical-timeline-element-content p {
     color: rgba(255, 255, 255, 0.9) !important;
+    font-size: clamp(0.8rem, 1.5vw, 1rem) !important;
 }
 
 #education .vertical-timeline-element-content h3,
@@ -219,6 +222,7 @@ body {
 #education .vertical-timeline-element-content h4,
 #experience .vertical-timeline-element-content h4 {
     color: #ffffff !important;
+    font-size: clamp(1rem, 2vw, 1.5rem) !important;
 }
 
 /* Keep original icon colors */
@@ -227,3 +231,171 @@ body {
     background: rgb(255, 165, 0) !important;
     color: #fff !important;
 }
+
+/* Responsive Design */
+@media (max-width: 380px) {
+    .vertical-timeline-element-content {
+        padding: 0.5rem !important;
+    }
+
+    .vertical-timeline-element-date {
+        font-size: 0.4rem !important;
+    }
+
+    .vertical-timeline-element-content p {
+        font-size: 0.4rem !important;
+    }
+
+    .vertical-timeline-element-content h3,
+    .vertical-timeline-element-content h4 {
+        font-size: 1rem !important;
+    }
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Responsive Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #333;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.about img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Skills Section */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-box {
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Projects Section */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    padding: var(--section-padding);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1s ease-out forwards; /* Apply animation */
+}
+
+.section h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #2980b9;
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1s ease-out 0.3s forwards; /* Delayed animation */
+}
+

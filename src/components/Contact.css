@@ -12,12 +12,12 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    padding: 2rem;
+    padding: clamp(2rem, 5vw, 4rem);
     background: linear-gradient(135deg, #1e1e1e, #2c3e50); /* Black-gradient background */
-    border-radius: 1rem;
+    border-radius: clamp(10px, 1.5vw, 15px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     max-width: 90%;
-    margin: 2rem auto;
+    margin: clamp(2rem, 5vw, 4rem) auto;
     color: white;
     box-sizing: border-box;
     width: 100%;
@@ -124,7 +124,7 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-section {
-        padding: 1.5rem;
+        padding: clamp(1.5rem, 4vw, 3rem);
     }
 
     .form-group {
@@ -138,18 +138,18 @@ button:hover {
 
 @media (max-width: 480px) {
     .contact-section {
-        padding: 1rem;
+        padding: clamp(1rem, 3vw, 2rem);
     }
 
     .contact-message {
-        font-size: 1rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
     }
 
     .form-group label {
-        font-size: 0.875rem;
+        font-size: clamp(0.75rem, 1.25vw, 0.875rem);
     }
 
     button {
-        font-size: 0.875rem;
+        font-size: clamp(0.75rem, 1.25vw, 0.875rem);
     }
 }

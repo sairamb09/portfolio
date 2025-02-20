@@ -1,171 +1,99 @@
-.skills-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 10px; /* Reduced padding further */
-    background: linear-gradient(135deg, #1e1e1e, #2c3e50);
-    border-radius: 8px; /* Compact border radius */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    margin: 15px 0; /* Smaller margin */
-    max-width: 700px; /* Reduced max-width */
-    width: 90%; /* Relative width for responsiveness */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.skills-section:hover {
-    transform: scale(1.01); /* Slight hover effect for interaction */
-}
-
-.skills-category {
-    margin-bottom: 10px; /* Reduced spacing */
-    width: 100%;
-    text-align: center;
-}
-
-.skills-category h3 {
-    color: #4caf50;
-    margin-bottom: 8px; /* Smaller spacing */
-    font-size: 1.2em; /* Smaller heading size */
-}
-
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px; /* Reduced gap */
-    justify-content: center;
-}
-
-.skill-item {
-    background-color: rgba(240, 248, 255, 0.7);
-    color: #2c3e50;
-    font-weight: bold;
-    padding: 4px 8px; /* Smaller padding */
-    font-size: 0.7em; /* Reduced text size */
-    border-radius: 8px; /* Compact border radius */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 60px; /* Reduced minimum size */
-    max-width: 100px; /* Reduced maximum size */
-}
-
-.skill-item:hover {
-    background-color: rgba(240, 248, 255, 0.9);
-    transform: scale(1.05); /* Subtle hover effect */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .skills-section {
-        padding: 15px 8px; /* Compact padding for tablets */
-        max-width: 600px; /* Smaller max width for tablets */
-    }
-
-    .skills-category h3 {
-        font-size: 1em; /* Smaller headings for tablets */
-    }
-
-    .skill-item {
-        padding: 3px 6px; /* Minimal padding */
-        font-size: 0.65em; /* Reduced text size */
-        min-width: 50px; /* Smaller min width */
-        max-width: 90px; /* Compact max width */
-    }
-}
-
-@media (max-width: 480px) {
-    .skills-section {
-        padding: 10px 5px; /* Minimal padding for mobile */
-        max-width: 100%; /* Full width for smaller screens */
-        border-radius: 6px; /* Smaller border radius */
-    }
-
-    .skills-category h3 {
-        font-size: 0.9em; /* Compact headings for mobile */
-    }
-
-    .skill-item {
-        padding: 2px 5px; /* Minimal padding */
-        font-size: 0.6em; /* Smaller font size */
-        border-radius: 6px; /* Compact border radius */
-        min-width: 45px; /* Minimal width for smaller tags */
-        max-width: 80px; /* Reduced max width */
-    }
-}
 /* Skills Section */
 .skills-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 30px;
+    padding: 4vw; /* Dynamic padding for better spacing */
     background: linear-gradient(135deg, #1e1e1e, #2c3e50);
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    margin: 30px 0;
-    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 5vw auto; /* Centered margin with auto width */
+    max-width: 90vw; /* Adjusts to screen width */
     width: 100%;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .skills-category {
-    margin-bottom: 20px;
+    margin-bottom: 3vw; /* Responsive spacing */
+    width: 100%;
+    text-align: center;
 }
 
 .skills-category h3 {
     color: #4caf50;
-    margin-bottom: 10px;
+    margin-bottom: 2vw;
+    font-size: clamp(1rem, 2.5vw, 1.8rem); /* Auto-adjusts based on screen size */
 }
 
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 2vw; /* Ensures even spacing between skills */
+    justify-content: center;
+    width: 100%;
 }
 
 .skill-item {
-    background-color: rgba(240, 248, 255, 0.7);
+    background-color: rgba(240, 248, 255, 0.8);
     color: #2c3e50;
     font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 1.5vw 3vw; /* Adaptive padding */
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Auto-adjusts text */
+    border-radius: 12px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px; /* Ensures readability */
+    max-width: 120px;
 }
 
 .skill-item:hover {
-    background-color: rgba(240, 248, 255, 0.9);
+    background-color: rgba(240, 248, 255, 1);
     transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* Improved Mobile & Tablet Responsiveness */
 @media (max-width: 768px) {
     .skills-section {
-        padding: 40px 20px;
+        padding: 5vw;
+        max-width: 95vw;
     }
 
     .skills-category h3 {
-        font-size: 1.2em;
+        font-size: clamp(1rem, 3vw, 1.5rem);
     }
 
     .skill-item {
-        padding: 8px 12px;
-        font-size: 0.9em;
+        padding: 2vw 4vw;
+        font-size: clamp(0.7rem, 2vw, 0.9rem);
+        min-width: 50px;
+        max-width: 100px;
     }
 }
 
 @media (max-width: 480px) {
     .skills-section {
-        padding: 30px 15px;
+        padding: 5vw;
+        max-width: 98vw;
+        border-radius: 8px;
     }
 
     .skills-category h3 {
-        font-size: 1em;
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    }
+
+    .skills-list {
+        gap: 3vw;
+        flex-direction: column; /* Stacks skills vertically for better readability */
     }
 
     .skill-item {
-        padding: 6px 10px;
-        font-size: 0.8em;
+        padding: 3vw 5vw;
+        font-size: clamp(0.7rem, 2.5vw, 1rem);
+        border-radius: 6px;
+        width: auto; /* Full width on small screens */
+        max-width: 80%;
     }
 }
-
