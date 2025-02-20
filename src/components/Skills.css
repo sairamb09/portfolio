@@ -1,52 +1,93 @@
-/* Skills Section */
+/* Skills Section - Enhanced Version */
+:root {
+    --primary-green: #4caf50;
+    --dark-bg: linear-gradient(135deg, #1e1e1e, #2c3e50);
+    --skill-bg: rgba(240, 248, 255, 0.8);
+    --text-dark: #2c3e50;
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+html {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit !important;
+}
+
+body {
+    width: 100% !important;
+    min-width: 320px !important;
+    overflow-x: hidden !important;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+    line-height: 1.6;
+}
+
+/* Skills Section Container */
 .skills-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4vw; /* Dynamic padding for better spacing */
-    background: linear-gradient(135deg, #1e1e1e, #2c3e50);
-    border-radius: 12px;
+    padding: clamp(2rem, 4vw, 3rem);
+    background: var(--dark-bg);
+    border-radius: clamp(10px, 1.5vw, 12px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin: 5vw auto; /* Centered margin with auto width */
-    max-width: 90vw; /* Adjusts to screen width */
-    width: 100%;
-    transition: all 0.3s ease-in-out;
+    margin: clamp(2rem, 5vw, 4rem) auto;
+    width: min(90%, 1200px);
+    transform: translateZ(0);
+    transition: var(--transition);
 }
 
+/* Skills Category */
 .skills-category {
-    margin-bottom: 3vw; /* Responsive spacing */
+    margin-bottom: clamp(1rem, 3vw, 2rem);
     width: 100%;
     text-align: center;
 }
 
 .skills-category h3 {
-    color: #4caf50;
-    margin-bottom: 2vw;
-    font-size: clamp(1rem, 2.5vw, 1.8rem); /* Auto-adjusts based on screen size */
+    color: var(--primary-green);
+    margin-bottom: clamp(0.5rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    line-height: 1.3;
 }
 
+/* Skills List */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 2vw; /* Ensures even spacing between skills */
+    gap: clamp(0.5rem, 2vw, 1rem);
     justify-content: center;
     width: 100%;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
+/* Skill Items */
 .skill-item {
-    background-color: rgba(240, 248, 255, 0.8);
-    color: #2c3e50;
+    background-color: var(--skill-bg);
+    color: var(--text-dark);
     font-weight: bold;
-    padding: 1.5vw 3vw; /* Adaptive padding */
-    font-size: clamp(0.8rem, 2vw, 1rem); /* Auto-adjusts text */
-    border-radius: 12px;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 2rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    border-radius: clamp(8px, 1.5vw, 12px);
+    transition: var(--transition);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 60px; /* Ensures readability */
-    max-width: 120px;
+    min-width: clamp(60px, 10vw, 120px);
+    touch-action: manipulation;
 }
 
 .skill-item:hover {
@@ -54,56 +95,61 @@
     transform: scale(1.05);
 }
 
-/* Improved Mobile & Tablet Responsiveness */
+/* Responsive Breakpoints */
 @media (max-width: 768px) {
     .skills-section {
-        padding: 5vw;
-        max-width: 95vw;
+        padding: clamp(1.5rem, 5vw, 2.5rem);
+        width: min(95%, 1000px);
     }
 
-    .skills-category h3 {
-        font-size: clamp(1rem, 3vw, 1.5rem);
+    .skills-list {
+        gap: clamp(0.75rem, 3vw, 1.25rem);
     }
 
     .skill-item {
-        padding: 2vw 4vw;
-        font-size: clamp(0.7rem, 2vw, 0.9rem);
-        min-width: 50px;
-        max-width: 100px;
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+        padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 4vw, 1.75rem);
     }
 }
 
 @media (max-width: 480px) {
     .skills-section {
-        padding: 5vw;
-        max-width: 98vw;
-        border-radius: 8px;
-    }
-
-    .skills-category h3 {
-        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+        border-radius: clamp(8px, 2vw, 10px);
+        width: 98%;
+        padding: clamp(1rem, 4vw, 1.5rem);
     }
 
     .skills-list {
-        gap: 3vw;
-        flex-direction: column; /* Stacks skills vertically for better readability */
+        gap: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .skill-item {
-        padding: 3vw 5vw;
-        font-size: clamp(0.7rem, 2.5vw, 1rem);
-        border-radius: 6px;
-        width: auto; /* Full width on small screens */
-        max-width: 50%;
+        width: calc(50% - 0.5rem);
+        max-width: none;
+        font-size: clamp(0.7rem, 3vw, 0.85rem);
+        padding: 0.75rem 1rem;
     }
 }
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: black; /* Keeps the black background */
-    color: white; /* Maintains readable text color */
-    touch-action: manipulation; /* Prevents zooming */
-    -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
-    -webkit-user-select: none; /* Prevents text selection on touch devices */
-    user-select: none; /* Prevents text selection on touch devices */
+
+/* Orientation Lock */
+@media (orientation: portrait) {
+    .skills-section {
+        margin: clamp(1rem, 3vh, 2rem) auto;
+    }
+}
+
+/* Hover States for Desktop Only */
+@media (hover: hover) and (pointer: fine) {
+    .skill-item:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Prevent iOS Text Size Adjustment */
+@supports (-webkit-touch-callout: none) {
+    .skill-item {
+        -webkit-font-smoothing: antialiased;
+    }
 }
