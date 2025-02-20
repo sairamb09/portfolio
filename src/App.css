@@ -184,5 +184,7 @@ body {
     line-height: 1.6;
     transition: var(--transition);
     overflow-x: hidden;
-    touch-action: manipulation; /* Add this line */
+    -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
+    -webkit-user-select: none; /* Prevents text selection on touch devices */
+    user-select: none; /* Prevents text selection on touch devices */
 }
