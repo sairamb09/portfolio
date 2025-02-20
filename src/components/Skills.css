@@ -106,5 +106,5 @@ body {
     -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
     -webkit-user-select: none; /* Prevents text selection on touch devices */
     user-select: none; /* Prevents text selection on touch devices */
-    max-width: 100vw; /* Prevents width from increasing */
+
 }
