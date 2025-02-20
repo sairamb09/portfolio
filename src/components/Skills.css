@@ -97,3 +97,13 @@
         max-width: 80%;
     }
 }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black; /* Keeps the black background */
+    color: white; /* Maintains readable text color */
+    touch-action: manipulation; /* Prevents zooming */
+    -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
+    -webkit-user-select: none; /* Prevents text selection on touch devices */
+    user-select: none; /* Prevents text selection on touch devices */
+}

@@ -4,8 +4,11 @@ body {
     font-family: Arial, sans-serif;
     background: black; /* Keeps the black background */
     color: white; /* Maintains readable text color */
+    touch-action: manipulation; /* Prevents zooming */
+    -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
+    -webkit-user-select: none; /* Prevents text selection on touch devices */
+    user-select: none; /* Prevents text selection on touch devices */
 }
-
 /* Project Card */
 .project-card {
     background: linear-gradient(135deg, #1a1a1a, #2b2b2b); /* Darker gradient */

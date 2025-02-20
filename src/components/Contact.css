@@ -4,8 +4,11 @@ body {
     font-family: Arial, sans-serif;
     background: black; /* Ensures black background throughout */
     color: white; /* Text color adjusted for readability on black background */
+    touch-action: manipulation; /* Prevents zooming */
+    -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
+    -webkit-user-select: none; /* Prevents text selection on touch devices */
+    user-select: none; /* Prevents text selection on touch devices */
 }
-
 /* Contact Section Styles */
 .contact-section {
     display: flex;

@@ -32,6 +32,10 @@ body {
   min-height: 100vh;
   padding: 1em;
   box-sizing: border-box;
+  touch-action: manipulation; /* Prevents zooming */
+  -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
+  -webkit-user-select: none; /* Prevents text selection on touch devices */
+  user-select: none; /* Prevents text selection on touch devices */
 }
 
 h1 {
