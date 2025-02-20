@@ -38,10 +38,7 @@ body {
     -webkit-user-select: none; /* Prevents text selection on touch devices */
     user-select: none; /* Prevents text selection on touch devices */
     touch-action: manipulation; /* Prevents zooming */
-
-    touch-action: manipulation; /* Prevents zooming */
 }
-
 .container {
     width: min(1200px, 90%);
     margin: 0 auto;

@@ -94,7 +94,7 @@
         font-size: clamp(0.7rem, 2.5vw, 1rem);
         border-radius: 6px;
         width: auto; /* Full width on small screens */
-        max-width: 80%;
+        max-width: 50%;
     }
 }
 body {
@@ -106,5 +106,4 @@ body {
     -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
     -webkit-user-select: none; /* Prevents text selection on touch devices */
     user-select: none; /* Prevents text selection on touch devices */
-
 }

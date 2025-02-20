@@ -36,8 +36,8 @@ body {
   -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
   -webkit-user-select: none; /* Prevents text selection on touch devices */
   user-select: none; /* Prevents text selection on touch devices */
-
 }
+
 h1 {
   font-size: clamp(1.8rem, 4vw, 3.2rem);
   line-height: 1.1;
