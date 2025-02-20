@@ -34,8 +34,10 @@ body {
     line-height: 1.6;
     transition: var(--transition);
     overflow-x: hidden;
+    -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
+    -webkit-user-select: none; /* Prevents text selection on touch devices */
+    user-select: none; /* Prevents text selection on touch devices */
 }
-
 .container {
     width: min(1200px, 90%);
     margin: 0 auto;
@@ -176,15 +178,4 @@ body {
 .section h2 {
     text-align: center;
     margin: 0 auto;
-}
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    transition: var(--transition);
-    overflow-x: hidden;
-    -ms-touch-action: manipulation; /* Prevents zooming for IE/Edge */
-    -webkit-user-select: none; /* Prevents text selection on touch devices */
-    user-select: none; /* Prevents text selection on touch devices */
 }
