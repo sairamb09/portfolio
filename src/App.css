@@ -231,3 +231,15 @@ body {
         font-size: clamp(0.5rem, 2vw, 0.65rem); /* Further reduced font size */
     }
 }
+
+/* Add this to your CSS file */
+.section {
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.section.in-view {
+    transform: translateY(0);
+    opacity: 1;
+}
